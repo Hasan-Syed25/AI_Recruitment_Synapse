@@ -1,9 +1,44 @@
-# AI Recruitment Matcher
+# AI Recruitment Synapse
 
 ## Overview
 This project implements an AI-powered system designed to automate key recruitment tasks: matching candidate resumes to relevant job postings and matching potential candidates to specific job roles. It leverages vector databases, hybrid search techniques, and Large Language Models (LLMs) via Azure OpenAI to provide intelligent scoring and justifications.
 
 This system was developed based on the requirements outlined in the SRN Technical Assessment for a Founding AI Engineer role.
+
+## Directory Structure
+```bash
+Directory structure:
+└── hasan-syed25-ai_recruitment_synapse/
+    ├── README.md
+    ├── requirements.txt
+    ├── test.py
+    ├── core/
+    │   ├── clients.py
+    │   ├── data_loader.py
+    │   ├── html_output.py
+    │   ├── justification.py
+    │   ├── main_task_1.py
+    │   ├── main_task_2.py
+    │   ├── prompts.py
+    │   └── vector_db.py
+    ├── data/
+    │   ├── candidates/
+    │   │   ├── first_five_profiles.json
+    │   │   └── JuiceboxExport_1743820890826.csv
+    │   ├── jobs/
+    │   │   └── Paraform_Jobs.csv
+    │   └── resumes/
+    ├── images/
+    ├── output/
+    │   ├── resume_job_matches.html
+    │   └── task2_candidate_results.html
+    └── utils/
+        ├── helper_task_2.py
+        ├── linkedin_profile_scraper.py
+        ├── nltk_downloads.py
+        └── scrape-pdf/
+
+```
 
 ## Features / Tasks Implemented
 
@@ -165,11 +200,16 @@ python task_2_main.py # Or your script name for Task 2
 
 ## Outputs
 - **Task 1:** Prints the matching results (top 2 jobs per resume with scores and justifications) directly to the console.
+  
 ![alt text](images/task1terminal.png)
+
 ![alt text](images/task1html.png)
 - **Task 2:** Generates an HTML file named task2_candidate_results.html in the project's root directory. This file contains a styled table listing the top 5-10 matched candidates, their scores, justifications, and optional LinkedIn outreach messages.
+  
 ![alt text](images/task2terminal.png)
+
 ![alt text](images/task2html.png)
+
 
 ## LinkedIn Data & Scraping Note
 This project utilizes pre-scraped LinkedIn data (provided in a JSON file, assumed to be obtained via tools like Proxycurl) to enhance candidate profiles for Task 2 matching. This enhancement is crucial because the scraped data typically contains far richer information than standard CSV exports, such as detailed work experience history (allowing for YOE and tenure calculations), comprehensive skill lists, profile summaries, and headlines. Accessing this richer data significantly improves the quality and accuracy of the candidate-job matching scores, particularly for criteria like tech stack alignment, YOE validation, and startup fit assessment.
