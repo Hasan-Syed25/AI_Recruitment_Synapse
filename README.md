@@ -215,3 +215,8 @@ python task_2_main.py # Or your script name for Task 2
 This project utilizes pre-scraped LinkedIn data (provided in a JSON file, assumed to be obtained via tools like Proxycurl) to enhance candidate profiles for Task 2 matching. This enhancement is crucial because the scraped data typically contains far richer information than standard CSV exports, such as detailed work experience history (allowing for YOE and tenure calculations), comprehensive skill lists, profile summaries, and headlines. Accessing this richer data significantly improves the quality and accuracy of the candidate-job matching scores, particularly for criteria like tech stack alignment, YOE validation, and startup fit assessment.
 
 For candidates in the input CSV where corresponding scraped data is not available in the provided JSON file, the system defaults to using only the limited information present in the CSV (like name, current title, location). This effectively simulates a real-world scenario where complete, up-to-date profile information might not be accessible for every potential candidate, demonstrating the system's ability to function with varying levels of data richness.
+
+## Tools For Scraping Linkedin and PDFs
+
+- Scrape-pdf: https://github.com/Nezteb/scrape-pdf
+- Proxycurl: https://github.com/nubelaco/proxycurl-py-linkedin-profile-scraper
